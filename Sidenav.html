@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+
+    <style>
+        /*.btn-purple {
+            color: #fff;
+            background-color: #803bdb;
+            border-color: #822fba;
+        }
+
+            .btn-purple:hover,
+            .btn-purple:focus,
+            .btn-purple:active,
+            .btn-purple:active {
+                color: #ffffff;
+                background-color: #6B39AD;
+                border-color: #822FBA;
+            }
+
+        #side-menu {
+            background-color: #1b1e24;
+            padding-top: 7.2rem;
+            height: 100%;
+            position: fixed;
+        }
+
+            #side-menu .profile-block > * {
+                display: inline-block;
+            }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            #mySidenav {
+                margin-left: -250px;
+            }
+
+            #mySidenav .active {
+                margin-left: 0;
+            }
+
+
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }*/
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            min-height: 100vh;
+            color: lightseagreen;
+            background: #7386d5;
+            transition: 0.3s;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            color: #7386d5;
+            background: #fff;
+        }
+
+        .sidebar-header {
+            background: #6d7fcc;
+        }
+
+        #sidebar.active {
+            margin-left: -250px;
+        }
+
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
+
+        .dropdown-toggle::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+
+
+        @media (max-width: 768px) {
+            #sidebar {
+                margin-left: -250px;
+            }
+
+            #sidebar.active {
+                margin-left: 0;
+            }
+        }
+
+       
+
+
+    </style>
+   
+
+
+</head>
+<body>
+    <div class="wrapper">
+
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <p>Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+
+
+            </ul> <!--list-unstyled components-->
+
+        </nav>
+
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidder</span>
+                    </button>
+                </div>
+            </nav>
+        </div> <!--content-->
+
+    </div>
+
+   
+
+
+
+
+    <!--<div class="container">
+        <button type="button" class="btn btn-primary btn-purple">Primary</button>
+    </div>
+
+    <div id="side-menu" class="col-md-3 hidden-xs" data-spy="affix" data-offset-top="0">
+        <div class="profile-block"></div>
+
+        <ul class="nav nav-pills nav-stacked">
+            <li class="transition">資訊</li>
+        </ul>
+    </div>-->
+    <!--<div id="mySidenav" class="sidenav active">
+        <a href="javascript:viod(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+
+    <span onclick="openNav()">&#9776; open</span>-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+            });
+
+        });
+
+
+
+
+                    //function openNav() {
+                    //    document.getElementById("mySidenav").style.width = "250px";
+                    //}
+
+                    //function closeNav() {
+                    //    document.getElementById("mySidenav").style.width = "0";
+                    //}
+
+                    //$("mySidenav").click(function () {
+                    //    $("mySidenav").css("width", "250px");
+                    //});
+
+                    //$("mySidenav").click(function () {
+                    //    $("mySidenav").css("width", "0");
+                    //});
+
+                    //$("mySidenav").click(function () {
+                    //    $("mySidenav").toggleClass("active");
+                    //});
+
+                    //$("mySidenav").on("click",  function () {
+                    //    $("mySidenav").toggleClass("active");
+                    //});
+
+                    //$(document).ready(function () {
+                    //    $("#sideberCollapse").on("click", function () {
+                    //        $("#sidebar").toggleClass("active");
+                    //    });
+                    //});
+
+                    //$(document).ready(function () {
+                    //    //$("#buttonColor").on("click", function () {
+                    //    //    $("#changeColor").addClass("changeCol");
+                    //    //        //.toggleClass("changeCol");
+                    //    //});
+
+                    //    $("#buttonColor").click(function () {
+                    //        $("#changeColor").toggleClass("changeCol");
+
+                    //    });
+                    //});
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
